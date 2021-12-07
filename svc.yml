@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: elastic-search-headless
+  #namespace: kube-logging
+spec:
+  selector:
+    app: elasticsearch
+  clusterIP: None
+  ports:
+    - port: 9200
+      name: es-node-1
+    - port: 9300
+      name: es-node-2
